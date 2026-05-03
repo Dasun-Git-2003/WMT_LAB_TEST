@@ -29,4 +29,12 @@ mongoose
     Item.collection.dropIndex("serialNumber_1").catch(() => {
       // Index might not exist, that's ok
     });
- 
+    
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.error("Database connection error:", error.message);
+    process.exit(1);
+  });
